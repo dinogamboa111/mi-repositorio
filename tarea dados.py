@@ -16,6 +16,12 @@ def tirar_dado10():
     return random.randint(1, 10)
 def tirar_dado20():
     return random.randint(1, 20)
+
+def cantidades():
+    for i in range(cantidaddados):
+            resultadodado = tirar_dado4()
+            resultados.append(resultadodado)
+            suma += resultadodado 
 ##defino variable para mi segundo while
 sigo = True
 ##creo menu de seleccion.
@@ -41,10 +47,7 @@ while True:
         ## como tendremos aveces mas de un dado como tirada, creamos un for para recorrer esos dados.
         ## y esto lo agregamos a una matriz llamada resultados, la cual trabajara con resultado del dado
         ## y se ira sumando a la variable suma de manera automatica, para luego mostrar el resultado final.
-        for i in range(cantidaddados):
-            resultadodado = tirar_dado4()
-            resultados.append(resultadodado)
-            suma += resultadodado 
+        cantidades() 
         print(f"Resultado de los {cantidaddados} dados de {tipodado} es: {resultados} y la suma es: {suma}")
         registrodados.append((usuario, tipodado, cantidaddados, resultados, suma))
         ##con todos mis datos tomados, los guardo en mi archivo csv, para mantener registro de mis jugadas.
